@@ -20,6 +20,7 @@
     }
   },
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -53,6 +54,7 @@
     "rollup": "^2.75.7",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-esbuild": "^4.9.1",
+    "rollup-plugin-serve": "^1.1.1",
     "ts-jest": "^28.0.5",
     "typescript": "^4.7.4"
   }

@@ -1,5 +1,6 @@
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
+import serve from "rollup-plugin-serve";
 
 const name = require("./package.json").main.replace(/\.js$/, "");
 
@@ -11,7 +12,13 @@ const bundle = (config) => ({
 
 export default [
   bundle({
-    plugins: [esbuild()],
+    plugins: [
+      esbuild(),
+      serve({
+        contentBase: "./dist", // 指定服务器的根目录
+        port: 8000, // 指定服务器的端口号
+      }),
+    ],
     output: [
       {
         file: `${name}.js`,
